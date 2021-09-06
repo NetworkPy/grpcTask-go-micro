@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./internal/point;point";
+
+service Pointservice {
+  rpc CreateGoodPoints(PointsReq) returns (PointsRes) {}
+}
+
+message Point {
+    int64 x = 1;
+    int64 y = 2;
+}
+
+message PointsReq {
+  repeated Point points = 1;
+}
+
+message PointsRes {
+  repeated Point points = 1;
+}
+
